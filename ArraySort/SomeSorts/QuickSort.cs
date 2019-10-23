@@ -13,8 +13,8 @@ namespace ArraySort.SomeSorts
     {
         public static int[] Sort(int[] inputSrc)
         {
-            if (inputSrc == null || inputSrc.Length == 0)
-                return null;
+            if (inputSrc == null || inputSrc.Length <= 1)
+                return inputSrc;
             int[] input = inputSrc.ToArray();
             ChildSort(input,0,input.Length-1);
             return input;

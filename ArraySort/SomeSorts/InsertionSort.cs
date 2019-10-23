@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ArraySort.SomeSorts
 {
+    /// <summary>
+    /// 插入排序
+    /// </summary>
     class InsertionSort
     {
         public static int[] Sort(int[] inputSrc)
