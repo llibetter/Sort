@@ -13,9 +13,9 @@ namespace ArraySort.SomeSorts
     {
         public static int[] Sort(int[] inputSrc)
         {
-            int[] input = inputSrc.ToArray();
-            if (input == null || input.Count() == 0)
+            if (inputSrc == null || inputSrc.Length == 0)
                 return null;
+            int[] input = inputSrc.ToArray();
             ChildSort(input,0,input.Length-1);
             return input;
         }
@@ -26,32 +26,21 @@ namespace ArraySort.SomeSorts
                 return;
             int partitionIndex = Partition(input, left, right);
             ChildSort(input, left, partitionIndex - 1);
-            ChildSort(input, partitionIndex + 1, right);
+            ChildSort(input,partitionIndex +1, right);
         }
-        private static int Partition(int[] input, int left, int right)
+        private static int Partition(int[] input, int low, int high)
         {
-            
-            int low = left;
-            int high = right;
             int pivot = input[low];
             while (low < high)
             {
                 while (low < high && input[high] >= pivot)
                     high--;
-
                 input[low] = input[high];
-
 
                 while (low < high && input[low] <= pivot)
                     low++;
-
                 input[high] = input[low];
-
-              
-
-
             }
-
             input[low] = pivot;
             return low;
         }

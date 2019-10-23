@@ -12,7 +12,7 @@ namespace ArraySort
     {
         static void Main(string[] args)
         {
-            int[] test = new int[] { 2, 43, 54, 234, 754, 213, 3, 4, 543, 23, 23, 654, 3, 4, 2341, -1 };
+            int[] test = new int[] { 2, 43, 54, 234, 754, 213,3,3,3,3,3,3333, 3, 4, 543, 23, 23, 654, 3, 4, 2341, -1 };
             //int[] test = new int[] { 2, 3,1,5,9};
 
 
@@ -35,9 +35,16 @@ namespace ArraySort
             stopWatch.Stop();
             Console.WriteLine($"\t耗时：{stopWatch.Elapsed.TotalMilliseconds}ms");
 
+            stopWatch.Restart();
+            string str4 = InsertionSort.Sort(test).Array2String();
+            Console.Write($"插入排序结果：\t{str4}");
+            stopWatch.Stop();
+            Console.WriteLine($"\t耗时：{stopWatch.Elapsed.TotalMilliseconds}ms");
 
-            if (str1 == str2 && str2 == str3)
+            if (str1 == str2 && str2 == str3 && str3 == str4)
                 Console.WriteLine("所有排序算法结果相同！");
+            else
+                Console.WriteLine("排序算法存在错误！");
 
 
             Console.ReadKey();

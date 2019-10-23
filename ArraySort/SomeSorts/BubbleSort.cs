@@ -13,9 +13,10 @@ namespace ArraySort.SomeSorts
     {
         public static int[] Sort(int[] inputSrc)
         {
-            int[] input = inputSrc.ToArray();
-            if (input == null || input.Count() == 0)
+            if (inputSrc == null || inputSrc.Length == 0)
                 return null;
+            int[] input = inputSrc.ToArray();
+         
             for (int i = 0; i < input.Count()-1; i++)
             {
                 bool isSwap = false;
